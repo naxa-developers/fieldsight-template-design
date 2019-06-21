@@ -24,8 +24,9 @@ class App extends Component {
   setHeight = () =>{
     return window.innerHeight
   }
+  
 
-  componentDidMount (){this.setState({height:window.innerHeight})}
+  componentDidMount (){this.setState({height:window.innerHeight -173})}
 
   render() {
     

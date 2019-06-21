@@ -6,7 +6,7 @@ const initialState = {
     myTab:false, projectTab:false
 }
 const popupState = {
-    previewPopup:false, sharePopup:false, replacePopup:false
+    previewPopup:false, sharePopup:false, replacePopup:false, myformPopup:false
 }
 
 const userState = {
@@ -15,7 +15,7 @@ const userState = {
 
 class myForm extends Component {
     state ={
-        myTab:true, projectTab:false, previewPopup:false, sharePopup:false, replacePopup:false, userTab:true, teamTab:false
+        myTab:true, projectTab:false, previewPopup:false, sharePopup:false, replacePopup:false, userTab:true, teamTab:false, toggleMyform:false
     }
     toggleTab = (e, type) => {
         this.setState((prevState)=>({
@@ -41,7 +41,11 @@ class myForm extends Component {
             previewPopup:false, sharePopup:false, replacePopup:false  
         });
     }
-    
+    myFormPopup = () => {  
+        this.setState({  
+            toggleMyform: !this.state.toggleMyform  
+        });
+    }
     
     render() {
         return (
@@ -50,9 +54,9 @@ class myForm extends Component {
                     <div className="row">
                         <div className="col-xl-12 col-lg-12">
                             <div className="right-content no-bg">
-                                <div className="card" style={{height: this.props.height}}>
+                                <div className="card" style={{minHeight: this.props.height}}>
                                     <div className="card-body myform-content">
-                                        <div className="myform-header mrb-30">
+                                        <div className="myform-header">
                                             <ul className="nav nav-tabs " id="myTab" role="tablist">
                                                 <li className="nav-item">
                                                     <a className={this.state.myTab ? "nav-link active" : "nav-link"} href={`#/`} onClick={(e) => this.toggleTab(e,'my')}>My forms</a>
@@ -64,92 +68,295 @@ class myForm extends Component {
                                             
                                         </div>
                                         <div className="tab-content">
-                                            <div className="">
+                                            <div className="mrt-30">
                                                 {this.state.myTab && 
-                                                    <table id="myform_table" className="table-bordered table myform_table dataTable">
-                                                        <thead>
-                                                            <tr>
-                                                                <th > S.N</th>
-                                                                <th >Form Name</th>
-                                                                <th >Create Date</th>
-                                                                <th >Updated date</th>
-                                                                <th >Action</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>1</td>
-                                                                <td>name</td>
-                                                                <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
+                                                <div className="myform-table">
+                                                    <div class="add-btn"><a href="#/" onClick={this.myFormPopup}>Add new <span><i class="la la-plus"></i></span></a></div>
+                                                    <div className="table-wrapper" style={{position:'relative', height:'500px'}}>
+                                                        <PerfectScrollbar>
+                                                        <table id="myform_table" className="table-bordered table myform_table dataTable">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th > S.N</th>
+                                                                    <th >Form Name</th>
+                                                                    <th >Create Date</th>
+                                                                    <th >Updated date</th>
+                                                                    <th >Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>name</td>
                                                                     <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
-                                                                <td>
-                                                                <a href={`#/`} onClick={(e) => this.togglePopup(e,'preview')} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
-                                                                    <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit" ></i> </a>
-                                                                    <a href={`#/`} onClick={(e) => this.togglePopup(e,'replace')} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
-                                                                    <a href={`#/`} onClick={(e) => this.togglePopup(e,'share')} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Share"> <i className="la la-share-alt"> </i> </a>
-                                                                    <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>1</td>
-                                                                <td>Home owner's name</td>
-                                                                <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
-                                                                <td><i className="fa fa-clock-o"></i><span>2019-10-14</span></td>
-                                                                <td>
+                                                                        <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
+                                                                    <td>
                                                                     <a href={`#/`} onClick={(e) => this.togglePopup(e,'preview')} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
-                                                                    <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit" ></i> </a>
-                                                                    <a href={`#/`} onClick={(e) => this.togglePopup(e,'replace')} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
-                                                                    <a href={`#/`} onClick={(e) => this.togglePopup(e,'share')} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Share"> <i className="la la-share-alt"> </i> </a>
-                                                                    <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
-                                                                </td>
-                                                            </tr>
-                                
-                                                        </tbody>
-                                                    </table>
+                                                                        <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit" ></i> </a>
+                                                                        <a href={`#/`} onClick={(e) => this.togglePopup(e,'replace')} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
+                                                                        <a href={`#/`} onClick={(e) => this.togglePopup(e,'share')} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Share"> <i className="la la-share-alt"> </i> </a>
+                                                                        <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>name</td>
+                                                                    <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
+                                                                        <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
+                                                                    <td>
+                                                                    <a href={`#/`} onClick={(e) => this.togglePopup(e,'preview')} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
+                                                                        <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit" ></i> </a>
+                                                                        <a href={`#/`} onClick={(e) => this.togglePopup(e,'replace')} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
+                                                                        <a href={`#/`} onClick={(e) => this.togglePopup(e,'share')} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Share"> <i className="la la-share-alt"> </i> </a>
+                                                                        <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>Home owner's name</td>
+                                                                    <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
+                                                                    <td><i className="fa fa-clock-o"></i><span>2019-10-14</span></td>
+                                                                    <td>
+                                                                        <a href={`#/`} onClick={(e) => this.togglePopup(e,'preview')} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
+                                                                        <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit" ></i> </a>
+                                                                        <a href={`#/`} onClick={(e) => this.togglePopup(e,'replace')} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
+                                                                        <a href={`#/`} onClick={(e) => this.togglePopup(e,'share')} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Share"> <i className="la la-share-alt"> </i> </a>
+                                                                        <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        </PerfectScrollbar>
+                                                    </div>
+                                                </div>
+                                                }
+                                                {this.state.toggleMyform && <Zoom duration ={500} >
+                                                    <div className="fieldsight-popup open" id="add-data">
+                                                    <div className="popup-body">
+                                                        <div className="card">
+                                                            <div className="card-header main-card-header">
+                                                                <h5>Add Form</h5>
+                                                                <span className="popup-close"  onClick={this.myFormPopup}><i className="la la-close"></i></span>
+                                                            </div>
+                                                            <div className="card-body">
+                                                                <form className="floating-form">
+                                                                    <div className="form-group">
+                                                                        <input type="text" class="form-control" required="" name="attribute" />
+                                                                        <label for="input">Form</label>
+                                                                    </div>
+                                                                    <div className="form-group pull-right no-margin">
+                                                                        <button type="submit" class="fieldsight-btn">Save</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </Zoom>
                                                 }
                                             </div>
-                                            <div className="">
-                                                {this.state.projectTab && 
-                                                    <table id="project_form_table" className="table-bordered table project_form dataTable">
-                                                        <thead>
-                                                            <tr>
-                                                                <th > S.N</th>
-                                                                <th >Form Name</th>
-                                                                <th >Create Date</th>
-                                                                <th >Updated date</th>
-                                                                <th >Action</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>1</td>
-                                                                <td>name</td>
-                                                                <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
-                                                                    <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
-                                                                <td>
-                                                                    <a href={`#/`} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
-                                                                    <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit"></i> </a>
-                                                                    <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
-                                                                    <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Clone"> <i className="la la-clone"> </i> </a>
-                                                                    <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>1</td>
-                                                                <td>Home owner's name</td>
-                                                                <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
-                                                                <td><i className="fa fa-clock-o"></i><span>2019-10-14</span></td>
-                                                                <td>
-                                                                <a href={`#/`} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
-                                                                    <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit"></i> </a>
-                                                                    <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
-                                                                    <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Clone"> <i className="la la-clone"> </i> </a>
-                                                                    <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
-                                                                </td>
-                                                            </tr>
-                                
-                                                        </tbody>
-                                                    </table>
+                                            <div className="mrt-30">
+                                                {this.state.projectTab &&
+                                                    <div className="project-table">
+                                                        <div className="table-list">
+                                                            <h4>project Table</h4>
+                                                            <div className="table-wrapper" style={{position:'relative', height:'300px'}}>
+                                                                <PerfectScrollbar>
+                                                                <table id="project_form_table" className="table-bordered table project_form dataTable">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th > S.N</th>
+                                                                            <th >Form Name</th>
+                                                                            <th >Create Date</th>
+                                                                            <th >Updated date</th>
+                                                                            <th >Action</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>1</td>
+                                                                            <td>name</td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
+                                                                                <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
+                                                                            <td>
+                                                                                <a href={`#/`} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit"></i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Clone"> <i className="la la-clone"> </i> </a>
+                                                                                <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1</td>
+                                                                            <td>Home owner's name</td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-10-14</span></td>
+                                                                            <td>
+                                                                            <a href={`#/`} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit"></i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Clone"> <i className="la la-clone"> </i> </a>
+                                                                                <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1</td>
+                                                                            <td>Home owner's name</td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-10-14</span></td>
+                                                                            <td>
+                                                                            <a href={`#/`} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit"></i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Clone"> <i className="la la-clone"> </i> </a>
+                                                                                <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1</td>
+                                                                            <td>Home owner's name</td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-10-14</span></td>
+                                                                            <td>
+                                                                            <a href={`#/`} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit"></i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Clone"> <i className="la la-clone"> </i> </a>
+                                                                                <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1</td>
+                                                                            <td>Home owner's name</td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-10-14</span></td>
+                                                                            <td>
+                                                                            <a href={`#/`} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit"></i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Clone"> <i className="la la-clone"> </i> </a>
+                                                                                <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1</td>
+                                                                            <td>Home owner's name</td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-10-14</span></td>
+                                                                            <td>
+                                                                            <a href={`#/`} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit"></i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Clone"> <i className="la la-clone"> </i> </a>
+                                                                                <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
+                                                                            </td>
+                                                                        </tr>
+                                            
+                                                                    </tbody>
+                                                                </table>
+                                                                </PerfectScrollbar>
+                                                            </div>
+                                                        </div>
+                                                        <div className="table-list">
+                                                            <h4>Sub Table</h4>
+                                                            <div className="table-wrapper" style={{position:'relative', height:'300px'}}>
+                                                                <PerfectScrollbar>
+                                                                <table id="project_form_table" className="table-bordered table project_form dataTable">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th > S.N</th>
+                                                                            <th >Form Name</th>
+                                                                            <th >Create Date</th>
+                                                                            <th >Updated date</th>
+                                                                            <th >Action</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>1</td>
+                                                                            <td>name</td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
+                                                                                <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
+                                                                            <td>
+                                                                                <a href={`#/`} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit"></i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Clone"> <i className="la la-clone"> </i> </a>
+                                                                                <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1</td>
+                                                                            <td>Home owner's name</td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-10-14</span></td>
+                                                                            <td>
+                                                                            <a href={`#/`} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit"></i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Clone"> <i className="la la-clone"> </i> </a>
+                                                                                <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1</td>
+                                                                            <td>Home owner's name</td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-10-14</span></td>
+                                                                            <td>
+                                                                            <a href={`#/`} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit"></i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Clone"> <i className="la la-clone"> </i> </a>
+                                                                                <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1</td>
+                                                                            <td>Home owner's name</td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-10-14</span></td>
+                                                                            <td>
+                                                                            <a href={`#/`} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit"></i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Clone"> <i className="la la-clone"> </i> </a>
+                                                                                <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1</td>
+                                                                            <td>Home owner's name</td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-10-14</span></td>
+                                                                            <td>
+                                                                            <a href={`#/`} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit"></i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Clone"> <i className="la la-clone"> </i> </a>
+                                                                                <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>1</td>
+                                                                            <td>Home owner's name</td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
+                                                                            <td><i className="fa fa-clock-o"></i><span>2019-10-14</span></td>
+                                                                            <td>
+                                                                            <a href={`#/`} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit"></i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
+                                                                                <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Clone"> <i className="la la-clone"> </i> </a>
+                                                                                <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
+                                                                            </td>
+                                                                        </tr>
+                                            
+                                                                    </tbody>
+                                                                </table>
+                                                                </PerfectScrollbar>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 }
                                             </div>
                                             {this.state.previewPopup && <Zoom duration ={500} >

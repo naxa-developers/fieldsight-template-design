@@ -38,7 +38,7 @@ class UserProfile extends Component{
                     <div className="row">
                         <div className="col-xl-3 col-lg-4">
                             <div className="left-sidebar new-sidebar profile-sidebar sticky-top">
-                                <div className="card" style={{height: this.props.height}}>
+                                <div className="card" style={{minHeight: this.props.height}}>
                                     <div className="card-header main-card-header">
                                         <h5>Profile</h5>
                                         <div className="dash-btn">
@@ -53,7 +53,7 @@ class UserProfile extends Component{
                         </div>
                         <div className="col-xl-9 col-lg-8">
                             <div className="right-content">
-                                <div className="card" style={{height: this.props.height}}>
+                                <div className="card" style={{minHeight: this.props.height}}>
                                     <div className="card-header main-card-header tab-header">
                                         <ul className="nav nav-tabs " id="myTab" role="tablist">
                                             <li className="nav-item">

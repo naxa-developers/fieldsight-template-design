@@ -99,7 +99,7 @@ class SubmissionDetails extends Component {
                         
                         <div className="col-xl-4 col-lg-4">
                             <div className="new-sidebar submission-sidebar sticky-top" >
-                                <div className="card" style={{height: this.props.height}}>
+                                <div className="card" style={{minHeight: this.props.height}}>
                                     <div className="card-body">
                                         
                                         <div className="submission-header">

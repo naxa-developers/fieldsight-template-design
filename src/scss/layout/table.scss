@@ -258,7 +258,19 @@
             }
         }
     }
-    
+    .project-table{
+        .table-list{
+            margin-bottom:1rem;
+            h4{
+                font-size: 1rem;
+                font-weight: 500;
+                text-transform: capitalize;
+                padding-bottom:0.5rem;
+                border-bottom: 1px solid $color-bg;
+            }
+        }
+        
+    }
     @media print{
         table.fixedHeader-floating {
             display: none;

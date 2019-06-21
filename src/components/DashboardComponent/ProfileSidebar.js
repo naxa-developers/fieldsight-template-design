@@ -5,7 +5,7 @@ class ProfileSidebar extends Component {
     render (){
         return(
             <React.Fragment>
-                <PerfectScrollbar>
+                
                 <div className="profile-content">
                     <figure>
                         <img src="/img/pf.jpg" alt="profile" />
@@ -30,6 +30,7 @@ class ProfileSidebar extends Component {
                         </ul>
                     </div>
                 </div>
+                <PerfectScrollbar>
                 <div className="invite">
                     <h4>Invitation</h4>
                     <div className="normal-list">
@@ -50,6 +51,7 @@ class ProfileSidebar extends Component {
                             </li>
                         </ul>
                     </div>
+                    
                 </div>
                 </PerfectScrollbar>
             </React.Fragment>

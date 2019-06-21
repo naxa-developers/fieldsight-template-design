@@ -10,7 +10,7 @@ class YourTeam extends Component {
                     <div className="row">
                         <div className="col-xl-4 col-lg-4">
                             <div className="left-sidebar new-sidebar sticky-top">
-                                <div className="card" style={{height: this.props.height}}>
+                                <div className="card" style={{minHeight: this.props.height}}>
                                     <div className="card-header main-card-header">
                                         <h5>Your Teams</h5>
                                     </div>
@@ -20,7 +20,7 @@ class YourTeam extends Component {
                         </div>
                         <div className="col-xl-8 col-lg-8">
                             <div className="right-content">
-                                <div className="card" style={{height: this.props.height}}>
+                                <div className="card" style={{minHeight: this.props.height}}>
                                     <div className="card-header main-card-header">
                                         <h5>Projects</h5>
                                     </div>
