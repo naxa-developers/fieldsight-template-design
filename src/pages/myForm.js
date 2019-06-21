@@ -10,7 +10,7 @@ const popupState = {
 }
 
 const userState = {
-    userTab:true, teamTab:false
+    userTab:false, teamTab:false
 }
 
 class myForm extends Component {
@@ -86,7 +86,7 @@ class myForm extends Component {
                                                                 <a href={`#/`} onClick={(e) => this.togglePopup(e,'preview')} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
                                                                     <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit" ></i> </a>
                                                                     <a href={`#/`} onClick={(e) => this.togglePopup(e,'replace')} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
-                                                                    <a href={`#/`} onClick={(e) => this.togglePopup(e,'share')} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-share-alt"> </i> </a>
+                                                                    <a href={`#/`} onClick={(e) => this.togglePopup(e,'share')} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Share"> <i className="la la-share-alt"> </i> </a>
                                                                     <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
                                                                 </td>
                                                             </tr>
@@ -99,7 +99,7 @@ class myForm extends Component {
                                                                     <a href={`#/`} onClick={(e) => this.togglePopup(e,'preview')} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
                                                                     <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit" ></i> </a>
                                                                     <a href={`#/`} onClick={(e) => this.togglePopup(e,'replace')} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
-                                                                    <a href={`#/`} onClick={(e) => this.togglePopup(e,'share')} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-share-alt"> </i> </a>
+                                                                    <a href={`#/`} onClick={(e) => this.togglePopup(e,'share')} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Share"> <i className="la la-share-alt"> </i> </a>
                                                                     <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
                                                                 </td>
                                                             </tr>
@@ -130,7 +130,7 @@ class myForm extends Component {
                                                                     <a href={`#/`} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
                                                                     <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit"></i> </a>
                                                                     <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
-                                                                    <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-share-alt"> </i> </a>
+                                                                    <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Clone"> <i className="la la-clone"> </i> </a>
                                                                     <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
                                                                 </td>
                                                             </tr>
@@ -143,7 +143,7 @@ class myForm extends Component {
                                                                 <a href={`#/`} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
                                                                     <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit"></i> </a>
                                                                     <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
-                                                                    <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-share-alt"> </i> </a>
+                                                                    <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Clone"> <i className="la la-clone"> </i> </a>
                                                                     <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
                                                                 </td>
                                                             </tr>
@@ -190,6 +190,7 @@ class myForm extends Component {
                                                                 {this.state.userTab && 
                                                                     <div className="thumb-list userlist" style={{position:'relative', height:'250px'}}>
                                                                         <PerfectScrollbar>
+                                                                        <form>
                                                                             <ul>
                                                                                 <li>
                                                                                     <figure>
@@ -199,17 +200,15 @@ class myForm extends Component {
                                                                                         <h6>Santosh Khatri </h6>
                                                                                         <span>skhatri.np@gmail.com</span>
                                                                                     </div>
-                                                                                    <form>
-                                                                                        <div className="form-group">
-                                                                                            <div className="custom-checkbox">
-                                                                                                <div className="checkbox ">
-                                                                                                    <label>
-                                                                                                        <input type="checkbox" name="radioYes" /><i class="helper"></i>
-                                                                                                    </label>
-                                                                                                </div>
+                                                                                    <div className="form-group checkbox-btn">
+                                                                                        <div className="custom-checkbox">
+                                                                                            <div className="checkbox ">
+                                                                                                <label>
+                                                                                                    <input type="checkbox" name="radioYes" /><i class="helper"></i>
+                                                                                                </label>
                                                                                             </div>
                                                                                         </div>
-                                                                                    </form>
+                                                                                    </div>
                                                                                 </li>
                                                                                 <li>
                                                                                     <figure>
@@ -219,17 +218,15 @@ class myForm extends Component {
                                                                                         <h6>Santosh Khatri </h6>
                                                                                         <span>skhatri.np@gmail.com</span>
                                                                                     </div>
-                                                                                    <form>
-                                                                                        <div className="form-group">
-                                                                                            <div className="custom-checkbox">
-                                                                                                <div className="checkbox ">
-                                                                                                    <label>
-                                                                                                        <input type="checkbox" name="radioYes" /><i class="helper"></i>
-                                                                                                    </label>
-                                                                                                </div>
+                                                                                    <div className="form-group checkbox-btn">
+                                                                                        <div className="custom-checkbox">
+                                                                                            <div className="checkbox ">
+                                                                                                <label>
+                                                                                                    <input type="checkbox" name="radioYes" /><i class="helper"></i>
+                                                                                                </label>
                                                                                             </div>
                                                                                         </div>
-                                                                                    </form>
+                                                                                    </div>
                                                                                 </li>
                                                                                 <li>
                                                                                     <figure>
@@ -239,17 +236,15 @@ class myForm extends Component {
                                                                                         <h6>Santosh Khatri </h6>
                                                                                         <span>skhatri.np@gmail.com</span>
                                                                                     </div>
-                                                                                    <form>
-                                                                                        <div className="form-group">
-                                                                                            <div className="custom-checkbox">
-                                                                                                <div className="checkbox ">
-                                                                                                    <label>
-                                                                                                        <input type="checkbox" name="radioYes" /><i class="helper"></i>
-                                                                                                    </label>
-                                                                                                </div>
+                                                                                    <div className="form-group checkbox-btn">
+                                                                                        <div className="custom-checkbox">
+                                                                                            <div className="checkbox ">
+                                                                                                <label>
+                                                                                                    <input type="checkbox" name="radioYes" /><i class="helper"></i>
+                                                                                                </label>
                                                                                             </div>
                                                                                         </div>
-                                                                                    </form>
+                                                                                    </div>
                                                                                 </li>
                                                                                 <li>
                                                                                     <figure>
@@ -259,36 +254,39 @@ class myForm extends Component {
                                                                                         <h6>Santosh Khatri </h6>
                                                                                         <span>skhatri.np@gmail.com</span>
                                                                                     </div>
-                                                                                    <form>
-                                                                                        <div className="form-group">
-                                                                                            <div className="custom-checkbox">
-                                                                                                <div className="checkbox ">
-                                                                                                    <label>
-                                                                                                        <input type="checkbox" name="radioYes" /><i class="helper"></i>
-                                                                                                    </label>
-                                                                                                </div>
+                                                                                    <div className="form-group checkbox-btn">
+                                                                                        <div className="custom-checkbox">
+                                                                                            <div className="checkbox ">
+                                                                                                <label>
+                                                                                                    <input type="checkbox" name="radioYes" /><i class="helper"></i>
+                                                                                                </label>
                                                                                             </div>
                                                                                         </div>
-                                                                                    </form>
+                                                                                    </div>
                                                                                 </li>
                                                                             </ul>
+                                                                            <div className="form-group mrt-30">
+                                                                                <button type="submit" className="fieldsight-btn">Share</button>
+                                                                            </div>
+                                                                        </form>
                                                                         </PerfectScrollbar>
+                                                                        
                                                                     </div>
                                                                     }
                                                                     {this.state.teamTab && 
                                                                     <div className="thumb-list teamlist" style={{position:'relative', height:'250px'}}>
                                                                         <PerfectScrollbar>
-                                                                        <ul>
-                                                                            <li>
-                                                                                <figure>
-                                                                                    <img src="/img/pf.jpg" alt="pf"/>
-                                                                                </figure>
-                                                                                <div className="content">
-                                                                                    <h6>Nuwakot </h6>
-                                                                                    <span>Sanepal Nepal</span>
-                                                                                </div>
-                                                                                <form>
-                                                                                    <div className="form-group">
+                                                                        <form>
+                                                                            <ul>
+                                                                                <li>
+                                                                                    <figure>
+                                                                                        <img src="/img/pf.jpg" alt="pf"/>
+                                                                                    </figure>
+                                                                                    <div className="content">
+                                                                                        <h6>Santosh Khatri </h6>
+                                                                                        <span>skhatri.np@gmail.com</span>
+                                                                                    </div>
+                                                                                    <div className="form-group checkbox-btn">
                                                                                         <div className="custom-checkbox">
                                                                                             <div className="checkbox ">
                                                                                                 <label>
@@ -297,18 +295,16 @@ class myForm extends Component {
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
-                                                                                </form>
-                                                                            </li>
-                                                                            <li>
-                                                                                <figure>
-                                                                                    <img src="/img/pf.jpg" alt="pf"/>
-                                                                                </figure>
-                                                                                <div className="content">
-                                                                                    <h6>Santosh Khatri </h6>
-                                                                                    <span>skhatri.np@gmail.com</span>
-                                                                                </div>
-                                                                                <form>
-                                                                                    <div className="form-group">
+                                                                                </li>
+                                                                                <li>
+                                                                                    <figure>
+                                                                                        <img src="/img/pf.jpg" alt="pf"/>
+                                                                                    </figure>
+                                                                                    <div className="content">
+                                                                                        <h6>Santosh Khatri </h6>
+                                                                                        <span>skhatri.np@gmail.com</span>
+                                                                                    </div>
+                                                                                    <div className="form-group checkbox-btn">
                                                                                         <div className="custom-checkbox">
                                                                                             <div className="checkbox ">
                                                                                                 <label>
@@ -317,18 +313,16 @@ class myForm extends Component {
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
-                                                                                </form>
-                                                                            </li>
-                                                                            <li>
-                                                                                <figure>
-                                                                                    <img src="/img/pf.jpg" alt="pf"/>
-                                                                                </figure>
-                                                                                <div className="content">
-                                                                                    <h6>Santosh Khatri </h6>
-                                                                                    <span>skhatri.np@gmail.com</span>
-                                                                                </div>
-                                                                                <form>
-                                                                                    <div className="form-group">
+                                                                                </li>
+                                                                                <li>
+                                                                                    <figure>
+                                                                                        <img src="/img/pf.jpg" alt="pf"/>
+                                                                                    </figure>
+                                                                                    <div className="content">
+                                                                                        <h6>Santosh Khatri </h6>
+                                                                                        <span>skhatri.np@gmail.com</span>
+                                                                                    </div>
+                                                                                    <div className="form-group checkbox-btn">
                                                                                         <div className="custom-checkbox">
                                                                                             <div className="checkbox ">
                                                                                                 <label>
@@ -337,18 +331,16 @@ class myForm extends Component {
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
-                                                                                </form>
-                                                                            </li>
-                                                                            <li>
-                                                                                <figure>
-                                                                                    <img src="/img/pf.jpg" alt="pf"/>
-                                                                                </figure>
-                                                                                <div className="content">
-                                                                                    <h6>Santosh Khatri </h6>
-                                                                                    <span>skhatri.np@gmail.com</span>
-                                                                                </div>
-                                                                                <form>
-                                                                                    <div className="form-group">
+                                                                                </li>
+                                                                                <li>
+                                                                                    <figure>
+                                                                                        <img src="/img/pf.jpg" alt="pf"/>
+                                                                                    </figure>
+                                                                                    <div className="content">
+                                                                                        <h6>Santosh Khatri </h6>
+                                                                                        <span>skhatri.np@gmail.com</span>
+                                                                                    </div>
+                                                                                    <div className="form-group checkbox-btn">
                                                                                         <div className="custom-checkbox">
                                                                                             <div className="checkbox ">
                                                                                                 <label>
@@ -357,9 +349,13 @@ class myForm extends Component {
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
-                                                                                </form>
-                                                                            </li>
-                                                                        </ul>
+                                                                                </li>
+                                                                            </ul>
+                                                                            <div className="form-group mrt-30">
+                                                                                <button type="submit" className="fieldsight-btn">Share</button>
+                                                                            </div>
+                                                                            
+                                                                        </form>
                                                                         </PerfectScrollbar>
                                                                     </div>
                                                                     }
