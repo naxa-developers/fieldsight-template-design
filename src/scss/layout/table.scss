@@ -40,7 +40,30 @@
         }
     }
     
-    
+    table{
+        td{
+            a.table-profile{
+                @include flex_start;
+                align-items: center;
+                figure{
+                    max-width: 40px;
+                    margin:0;
+                    overflow: hidden;
+                    margin-right: 0.5rem;
+                    img{
+                        width:40px;
+                        height: 40px;
+                        @include radius50;
+                        @include boxshadow;
+                    }
+                }
+                h5{
+                    font-size:0.875rem;
+                }
+            }
+            
+        }
+    }
     table.table {
         tr{
             .progress{

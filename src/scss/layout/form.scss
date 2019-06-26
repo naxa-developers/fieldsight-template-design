@@ -13,10 +13,36 @@
                 background-color: $color-white;
                 border-radius:0;
                 @include placeholder($color-primary);
+                box-shadow: none;
                 &:focus{
                     box-shadow:none;
                     border-color:$color-blue;
                 }
+            }
+            .css-yk16xz-control{
+              box-shadow: none;
+              border:0;
+              border-bottom:1px solid $color-bg;
+              &:hover{
+                box-shadow: none;
+                border:0;
+                border-color:$color-blue;
+              }
+              .css-tlfecz-indicatorContainer{
+                color:$color-blue;
+              }
+              
+            }
+            .css-1pahdxg-control{
+              border:none;
+                box-shadow: none;
+                border-radius: 0;
+              &:hover{
+                border:none;
+                box-shadow: none;
+                border-bottom:1px solid $color-blue;
+                border-radius: 0;
+              }
             }
             label{
               color:$color-primary;
@@ -195,7 +221,7 @@
                               transform-origin: left top;
                       border-radius: 0.25rem;
                       content: '';
-                      -webkit-transition: opacity 0.28s ease, height 0s linear 0.28s;
+                      -webkit-transition: opacity 0.2s ease, height 0s linear 0.2s;
                       transition: opacity 0.1s ease, height 0s linear 0.1s;
                       opacity: 0;
                     }
@@ -207,8 +233,8 @@
                       box-shadow: 0 0 0 0.0625rem $color-white;
                     }
                     &::after{
-                      top: 0.3rem;
-                      left: 0;
+                      top: 0.4rem;
+                      left: 0.12rem;
                       -webkit-transform: rotate(-45deg);
                               transform: rotate(-45deg);
                     }
@@ -224,17 +250,17 @@
                         color:$color-blue;
                         &::after{
                           opacity: 1;
-                          -webkit-transition: height 0.28s ease;
-                          transition: height 0.28s ease;
-                          height: 0.5rem;
+                          -webkit-transition: height 0.2s ease;
+                          transition: height 0.2s ease;
+                          height: 0.3rem;
                         }
                         &::before{
                           opacity: 1;
-                          -webkit-transition: height 0.28s ease;
-                          transition: height 0.28s ease;
-                          height: 1rem;
-                          -webkit-transition-delay: 0.28s;
-                                  transition-delay: 0.28s;
+                          -webkit-transition: height 0.2s ease;
+                          transition: height 0.2s ease;
+                          height: 0.6rem;
+                          -webkit-transition-delay: 0.2s;
+                                  transition-delay: 0.2s;
                         }
                       }
                     }
@@ -472,6 +498,29 @@
       }
       
     }
+    .warning{
+      padding: 0 1rem 1rem 0;
+      text-align: center;
+      i{
+        color:$color-red;
+        font-size:4rem;
+      }
+      h4{
+        font-size:1.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin: 1rem 0;
+      }
+      p{
+        font-size: 0.875rem;
+        margin:0.8rem 0 1.2rem 0;
+      }
+      .warning-footer{
+        a{
+          margin-right:0.6125rem;
+        }
+      }
+    }
     .edit-form{
       textarea{
         height: 220px;
@@ -603,6 +652,12 @@
                   }
                 }
               }
+            }
+            &.lg-body{
+              max-width: 800px;
+            }
+            &.sm-body{
+              max-width: 500px;
             }
         }
       }

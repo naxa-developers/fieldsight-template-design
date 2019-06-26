@@ -11,7 +11,6 @@ import ProgressTable from '../components/DashboardComponent/ProgressTable';
 import About from '../components/DashboardComponent/AboutSection/About';
 import ProjectManager from '../components/DashboardComponent/AboutSection/ProjectManager';
 import Logs from '../components/DashboardComponent/AboutSection/Logs';
-import Modal from '../components/Modal';
 
 class ProjectDashboard extends Component {
     
@@ -48,7 +47,7 @@ class ProjectDashboard extends Component {
                                             <div className="card-body" style={{position:'relative', height:'434px'}}>
                                                 <DatatablePage />
                                             </div>
-                                            <Modal />
+                                           
                                         </div>
                                     </div>
                                 </div>

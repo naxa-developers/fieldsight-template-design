@@ -13,6 +13,10 @@ import UserProfile from './pages/UserProfile';
 import YourTeam from './pages/YourTeam';
 import Invitation from './pages/Invitation';
 import MyForm from './pages/myForm';
+import ProjectManageSite from './pages/ProjectManageSite';
+import Users from './pages/Users';
+import FormSubmission from './pages/FormSubmission';
+import Response from './pages/Response';
 
 
 
@@ -49,6 +53,10 @@ class App extends Component {
                             <li><Link to="/pages/YourTeam" >YourTeam</Link></li>
                             <li><Link to="/pages/Invitation" >Invitation</Link></li>
                             <li><Link to="/pages/myForm" >myForm</Link></li>
+                            <li><Link to="/pages/ProjectManageSite" >ProjectManageSite</Link></li>
+                            <li><Link to="/pages/Users" >Users</Link></li>
+                            <li><Link to="/pages/FormSubmission" >FormSubmission</Link></li>
+                            <li><Link to="/pages/Response" >Response</Link></li>
                         </div>
                     </div>
                 </div>
@@ -62,7 +70,12 @@ class App extends Component {
                       <Route path="/pages/YourTeam" render={props => <YourTeam {...props} height={this.state.height}/>}></Route>
                       <Route path="/pages/Invitation" render={props => <Invitation {...props} height={this.state.height}/>}></Route>
                       <Route path="/pages/myForm" render={props => <MyForm {...props} height={this.state.height}/>}></Route>
+                      <Route path="/pages/projectManageSite" component={ProjectManageSite}></Route>
+                      <Route path="/pages/Users" component={Users}></Route>
+                      <Route path="/pages/FormSubmission" component={FormSubmission}></Route>
+                      <Route path="/pages/Response" component={Response}></Route>
                       <Route path="/" component={ProjectDashboard}></Route>
+                      
                   </Switch>
               </div>
             </div>
