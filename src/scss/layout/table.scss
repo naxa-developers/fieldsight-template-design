@@ -213,7 +213,6 @@
                             width:150px;
                             background-color: $color-white;
                             @include radius4;
-                            display: none;
                             z-index: 99;
                             &::after{
                                 content: "";
