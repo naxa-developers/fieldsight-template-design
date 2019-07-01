@@ -123,7 +123,7 @@ class SubAcc extends Component {
                         </Card.Body>
                         </Accordion.Collapse>
                     </Card>
-                    </Accordion>
+                </Accordion>
             </React.Fragment>
         );
     }

@@ -2,18 +2,18 @@ import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
 
 const sideNavRoutes = [
-  { to: "/", path: "/", title: "General Forms" },
-  { to: "/components/Response/ResponseScheduledForm", path: "/components/Response/ResponseScheduledForm", title: "Scheduled Forms" },
+  { to: "/", path: "/pages/Response/", title: "General Forms" },
+  { to: "/components/Responsed/ResponseScheduledForm", path: "/pages/Response/components/Responsed/ResponseScheduledForm", title: "Scheduled Forms" },
   {
-    to: "/components/Response/ResponseStageForm",
-    path: "/components/Response/ResponseStageForm",
+    to: "/components/Responsed/ResponseStageForm",
+    path: "/pages/Response/components/Responsed/ResponseStageForm",
     title: "Stage Form"
   },
-  { to: "/components/Response/ResponseSurveyForm", path: "/components/Response/ResponseSurveyForm", title: "Survey Form" },
+  { to: "/components/Responsed/ResponseSurveyForm", path: "/pages/Response/components/Responsed/ResponseSurveyForm", title: "Survey Form" },
  
 ];
 
-class LeftSidebar extends Component {
+class ResponseSetting extends Component {
   render() {
     const {
       location: { pathname }
@@ -37,4 +37,4 @@ class LeftSidebar extends Component {
   }
 }
 
-export default withRouter(LeftSidebar);
+export default withRouter(ResponseSetting);
