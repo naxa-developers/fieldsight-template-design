@@ -4,7 +4,8 @@ import Iframe from 'react-iframe';
 import axios from 'axios'
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
-import { thisExpression } from '@babel/types';
+import PreviewModal from "./PreviewModal";
+
 
 
 class ProjecTable extends Component {
@@ -35,9 +36,11 @@ class ProjecTable extends Component {
             <React.Fragment>
 
                 {this.state.project_list.map((item, i) => (
-                    <div className="table-list" key={i}>
-                        <h4>{item.name}</h4>
-                        <div className="table-wrapper" style={{ position: 'relative', height: '300px' }}>
+                    <div key={i}>
+                    <div className="card-header main-card-header sub-card-header">
+                    <h5>{item.name}</h5>
+                    </div>
+                        <div className="card-body" style={{ position: 'relative', height: '300px' }}>
                             <PerfectScrollbar>
                                 <table id="project_form_table" className="table-bordered table project_form dataTable">
                                     <thead>
@@ -58,8 +61,8 @@ class ProjecTable extends Component {
                                                 <td><i className="fa fa-clock-o"></i><span>2019-08-14</span></td>
                                                 <td><i className="fa fa-clock-o"></i><span>2019-10-14</span></td>
                                                 <td>
-                                                    <a href={`#/`} onClick={(e) => this.props.togglePopup(e, 'preview', items.preview_url)} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
-                                                    <a href={`#/`} onClick={(e) => this.props.opentabhandler(e, items.edit_url)} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit"></i> </a>
+                                                    <a href={`#/`} onClick={(e) => this.props.commonPopupHandler(e,PreviewModal,items.preview_url,"Preview Form","preview",null)} className="td-view-btn td-btn" data-toggle="tooltip" data-placement="top" title="Preview"> <i className="la la-eye"> </i> </a>
+                                                    <a href={`#/`} onClick={(e) => this.props.OpenTabHandler(e, items.edit_url)} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Edit"> <i className="la la-edit"></i> </a>
                                                     <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Replace"> <i className="la la-refresh"> </i> </a>
                                                     <a href={`#/`} className="td-edit-btn td-btn" data-toggle="tooltip" data-placement="top" title="Clone"> <i className="la la-clone"> </i> </a>
                                                     <a href={`#/`} className="td-delete-btn td-btn" data-toggle="tooltip" data-placement="top" title="Delete"> <i className="la la-trash"></i> </a>
@@ -73,7 +76,8 @@ class ProjecTable extends Component {
                                 </table>
                             </PerfectScrollbar>
                         </div>
-                    </div>
+                        </div>
+                   
 
                 ))}
             </React.Fragment>

@@ -52,7 +52,7 @@ class App extends Component {
               <div className="container-fluid">
 
               <div className="card">
-                    <div className="card-body">
+                   {/* <div className="card-body">
                         <div className="routing-list">
                             <li><Link to="/" >project-dashboard</Link></li>
                             <li><Link to="/pages/SiteDashboard" >Site Dashboard </Link></li>
@@ -68,9 +68,9 @@ class App extends Component {
                             <li><Link to="/pages/FormSubmission" >FormSubmission</Link></li>
                             <li><Link to="/pages/Response" >Response</Link></li>
                         </div>
-                    </div>
+                    </div>  */}
                 </div>
-                {/*<Breadcrumb /> */}
+                {/* <Breadcrumb /> */}
                 <Switch>
                     {/*   <Route path="/pages/SiteDashboard" component={SiteDashboard}></Route>
                     <Route path="/pages/OrgDashboard" component={OrgDashboard}></Route>
@@ -81,8 +81,8 @@ class App extends Component {
                     <Route path="/pages/Invitation" render={props => <Invitation {...props} height={this.state.height}/>}></Route>
                    
                       */}
-                    <Route path="/newform" render={props => <MyformMain {...props} height={this.state.height}/>}></Route>
-                    <Route path="/" render={props => <MyForm {...props} height={this.state.height}/>}></Route>
+                    <Route path="/" render={props => <MyformMain {...props} height={this.state.height}/>}></Route>
+                    <Route exact path="/myform" render={props => <MyForm {...props} height={this.state.height}/>}></Route>
                   </Switch>
               </div>
             </div>
