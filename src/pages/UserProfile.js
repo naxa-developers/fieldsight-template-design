@@ -15,6 +15,7 @@ class UserProfile extends Component{
     state ={
         roleTab:true, activityTab:false
     }
+    
     openTab = (e,type) => {
         this.setState((prevState) => ({
             ...initialState,
@@ -34,7 +35,8 @@ class UserProfile extends Component{
     render(){
         return(
             <React.Fragment>
-                <main id="main-content">
+                <main id="main-content" >
+                    
                     <div className="row">
                         <div className="col-xl-3 col-lg-4">
                             <div className="left-sidebar new-sidebar profile-sidebar sticky-top">
