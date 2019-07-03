@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Zoom from 'react-reveal/Zoom';
-import Iframe from 'react-iframe';
-import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import axios from 'axios'
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';

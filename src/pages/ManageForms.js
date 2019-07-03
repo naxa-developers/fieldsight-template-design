@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Route, Switch } from "react-router-dom";
-import ResponseSurveyForm from '../components/Responsed/ResponseSurveyForm';
-import ResponseScheduledForm from '../components/Responsed/ResponseScheduledForm';
-import ResponseStageForm from '../components/Responsed/ResponseStageForm';
-import ResponseGeneralForm from '../components/Responsed/ResponseGeneralForm';
-import ResponseSetting from '../components/Responsed/ResponseSetting';
+import ManageSurveyForm from '../components/manageForm/ManageSurveyForm';
+import ManageScheduledForm from '../components/manageForm/ManageScheduledForm';
+import ManageStageForm from '../components/manageForm/ManageStageForm';
+import ManageGeneralForm from '../components/manageForm/ManageGeneralForm';
+import ManageFormSetting from '../components/manageForm/ManageFormSetting';
 import DeleteTable from '../components/Responsed/DeleteTable';
 
 
-class Response extends Component {
+class ManageForms extends Component {
     state = {
         hide: true,
     };
@@ -26,10 +26,10 @@ class Response extends Component {
                             <div className="left-sidebar new-sidebar sticky-top">
                                 <div className="card">
                                     <div className="card-header main-card-header">
-                                        <h5>Submission Forms</h5>
+                                        <h5>Manage Forms</h5>
                                     </div>
                                     <div className="card-body">
-                                        <ResponseSetting />
+                                        <ManageFormSetting />
                                     </div>
                                 </div>
                             </div>
@@ -40,14 +40,13 @@ class Response extends Component {
                                     <div className="tab-content">
                                         <Switch>
 
-                                            <Route path={`${this.props.match.url}/components/Responsed/ResponseScheduledForm`} component={ResponseScheduledForm} />
-                                            
+                                            <Route path={`${this.props.match.url}/components/manageForm/ManageScheduledForm`} component={ManageScheduledForm} />
                                             <Route
-                                                path={`${this.props.match.url}/components/Responsed/ResponseStageForm`}
-                                                component={ResponseStageForm}
+                                                path={`${this.props.match.url}/components/manageForm/ManageStageForm`}
+                                                component={ManageStageForm}
                                             />
-                                            <Route path={`${this.props.match.url}/components/Responsed/ResponseSurveyForm`} component={ResponseSurveyForm} />
-                                            <Route exact path={this.props.match.url} component={ResponseGeneralForm} />
+                                            <Route path={`${this.props.match.url}/components/manageForm/ManageSurveyForm`} component={ManageSurveyForm} />
+                                            <Route exact path={this.props.match.url} component={ManageGeneralForm} />
                                         </Switch>
                                     </div>
                                 </div>
@@ -79,4 +78,4 @@ class Response extends Component {
         )
     }
 }
-export default Response
+export default ManageForms

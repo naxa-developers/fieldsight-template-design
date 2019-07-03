@@ -7,19 +7,18 @@ class ProjectManageTable extends Component{
                 <Table responsive="xl" className="table  table-bordered  dataTable ">
                     <thead>
                         <tr>
-                            <th >ID</th>
-                            <th >sites</th>
+                            <th >Site name</th>
+                            <th >id</th>
                             <th >Address</th>
-                            <th >Regions</th>
+                            <th >Region</th>
                             <th >Progress</th>
                             <th >Submissions</th>
-                            <th >status</th>
+                            <th >Latest status</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>28-11</td>
-                            <td>
+                        <td>
                                 <a href="#" className="pending table-profile">
                                     <figure>
                                         <img src="/img/pf.jpg" alt="site-logo" />
@@ -27,6 +26,8 @@ class ProjectManageTable extends Component{
                                     <h5>Krishna B Mijar</h5>
                                 </a>
                             </td>
+                            <td>28-11</td>
+                            
                             <td>kathmandu,10 Nepal</td>
                             <td><a href="#" className="pending">Gorkha</a></td>
                             <td>
@@ -41,8 +42,7 @@ class ProjectManageTable extends Component{
                             
                         </tr>
                         <tr>
-                            <td>28-11</td>
-                            <td>
+                        <td>
                                 <a href="#" className="pending table-profile">
                                     <figure>
                                         <img src="/img/pf.jpg" alt="site-logo" />
@@ -50,6 +50,8 @@ class ProjectManageTable extends Component{
                                     <h5>Krishna B Mijar</h5>
                                 </a>
                             </td>
+                            <td>28-11</td>
+                            
                             <td>kathmandu,10 Nepal</td>
                             <td><a href="#" className="pending">Gorkha</a></td>
                             <td>
@@ -64,8 +66,7 @@ class ProjectManageTable extends Component{
                             
                         </tr>
                         <tr>
-                            <td>28-11</td>
-                            <td>
+                        <td>
                                 <a href="#" className="pending table-profile">
                                     <figure>
                                         <img src="/img/pf.jpg" alt="site-logo" />
@@ -73,6 +74,8 @@ class ProjectManageTable extends Component{
                                     <h5>Krishna B Mijar</h5>
                                 </a>
                             </td>
+                            <td>28-11</td>
+                            
                             <td>kathmandu,10 Nepal</td>
                             <td><a href="#" className="pending">Gorkha</a></td>
                             <td>
@@ -87,8 +90,7 @@ class ProjectManageTable extends Component{
                             
                         </tr>
                         <tr>
-                            <td>28-11</td>
-                            <td>
+                        <td>
                                 <a href="#" className="pending table-profile">
                                     <figure>
                                         <img src="/img/pf.jpg" alt="site-logo" />
@@ -96,6 +98,8 @@ class ProjectManageTable extends Component{
                                     <h5>Krishna B Mijar</h5>
                                 </a>
                             </td>
+                            <td>28-11</td>
+                            
                             <td>kathmandu,10 Nepal</td>
                             <td><a href="#" className="pending">Gorkha</a></td>
                             <td>
@@ -110,8 +114,7 @@ class ProjectManageTable extends Component{
                             
                         </tr>
                         <tr>
-                            <td>28-11</td>
-                            <td>
+                        <td>
                                 <a href="#" className="pending table-profile">
                                     <figure>
                                         <img src="/img/pf.jpg" alt="site-logo" />
@@ -119,6 +122,8 @@ class ProjectManageTable extends Component{
                                     <h5>Krishna B Mijar</h5>
                                 </a>
                             </td>
+                            <td>28-11</td>
+                            
                             <td>kathmandu,10 Nepal</td>
                             <td><a href="#" className="pending">Gorkha</a></td>
                             <td>
@@ -133,8 +138,7 @@ class ProjectManageTable extends Component{
                             
                         </tr>
                         <tr>
-                            <td>28-11</td>
-                            <td>
+                        <td>
                                 <a href="#" className="pending table-profile">
                                     <figure>
                                         <img src="/img/pf.jpg" alt="site-logo" />
@@ -142,6 +146,8 @@ class ProjectManageTable extends Component{
                                     <h5>Krishna B Mijar</h5>
                                 </a>
                             </td>
+                            <td>28-11</td>
+                            
                             <td>kathmandu,10 Nepal</td>
                             <td><a href="#" className="pending">Gorkha</a></td>
                             <td>
@@ -156,8 +162,7 @@ class ProjectManageTable extends Component{
                             
                         </tr>
                         <tr>
-                            <td>28-11</td>
-                            <td>
+                        <td>
                                 <a href="#" className="pending table-profile">
                                     <figure>
                                         <img src="/img/pf.jpg" alt="site-logo" />
@@ -165,6 +170,8 @@ class ProjectManageTable extends Component{
                                     <h5>Krishna B Mijar</h5>
                                 </a>
                             </td>
+                            <td>28-11</td>
+                            
                             <td>kathmandu,10 Nepal</td>
                             <td><a href="#" className="pending">Gorkha</a></td>
                             <td>
@@ -179,8 +186,7 @@ class ProjectManageTable extends Component{
                             
                         </tr>
                         <tr>
-                            <td>28-11</td>
-                            <td>
+                        <td>
                                 <a href="#" className="pending table-profile">
                                     <figure>
                                         <img src="/img/pf.jpg" alt="site-logo" />
@@ -188,6 +194,8 @@ class ProjectManageTable extends Component{
                                     <h5>Krishna B Mijar</h5>
                                 </a>
                             </td>
+                            <td>28-11</td>
+                            
                             <td>kathmandu,10 Nepal</td>
                             <td><a href="#" className="pending">Gorkha</a></td>
                             <td>

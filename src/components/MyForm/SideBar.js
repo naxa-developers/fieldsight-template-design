@@ -23,12 +23,12 @@ class SideBar extends Component {
                                     <ul className="nav nav-tabs flex-column border-tabs" id="myTab" role="tablist">
                                         <li className="nav-item">
                                             <Link to="/" className="nav-link active">
-                                                My Form
+                                                My Forms
                                             </Link>
                                         </li>
                                         <li className="nav-item">
                                         <Link to="/projectform" className="nav-link">
-                                               Project Form
+                                               Project Forms
                                             </Link>
                                         </li>
                                         {/* <li className="nav-item">
