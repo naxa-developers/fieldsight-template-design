@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
 
 const sideNavRoutes = [
-  { to: "/", path: "/pages/Response/", title: "General Forms" },
+  { to: "/", path: "/pages/Response/", title: "General Forms", heading:"Library Forms" },
   { to: "/components/Responsed/ResponseScheduledForm", path: "/pages/Response/components/Responsed/ResponseScheduledForm", title: "Scheduled Forms" },
   {
     to: "/components/Responsed/ResponseStageForm",
@@ -30,6 +30,7 @@ class ResponseSetting extends Component {
             >
               {route.title}
             </Link>
+            <h5>{route.heading}</h5>
           </li>
         ))}
       </ul>

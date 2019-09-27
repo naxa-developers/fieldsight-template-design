@@ -142,8 +142,6 @@ class ProgressTable extends Component {
         );
 
     }
-
-
 }
 
 export default ProgressTable;

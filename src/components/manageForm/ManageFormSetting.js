@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
 
 const sideNavRoutes = [
-  { to: "/", path: "/pages/ManageForms/", title: "General Forms" },
+  { to: "/", path: "/pages/ManageForms/", title: "General Forms",heading:"Library form" },
   { to: "/components/manageForm/ManageScheduledForm", path: "/pages/ManageForms/components/manageForm/ManageScheduledForm", title: "Scheduled Forms" },
   {
     to: "/components/manageForm/ManageStageForm",
@@ -30,6 +30,7 @@ class ManageFormSetting extends Component {
             >
               {route.title}
             </Link>
+            <h5>{route.heading}</h5>
           </li>
         ))}
       </ul>

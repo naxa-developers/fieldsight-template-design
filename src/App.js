@@ -16,7 +16,10 @@ import UserProfile from './pages/UserProfile';
 import YourTeam from './pages/YourTeam';
 import Invitation from './pages/Invitation';
 import Response from './pages/Response';
-import MousePointer from './components/MousePointer';
+import ManageForms from './pages/ManageForms';
+import ProjectManageSite from './pages/ProjectManageSite';
+import Users from './pages/Users';
+// import MousePointer from './components/MousePointer';
 
 
 
@@ -31,7 +34,7 @@ const setAuth = () => {
 
 class App extends Component {
   state ={
-    height:'',  x: 0, y: 0
+    height:''
   }
     handleMouseMove =(event) => {
     this.setState({
@@ -54,8 +57,9 @@ class App extends Component {
     return (
       <React.Fragment >
         
-          <div id="fieldsight-new" className="fieldsight-new"  onMouseMove={this.handleMouseMove}>
-          <MousePointer mouse={this.state} />
+          <div id="fieldsight-new" className="fieldsight-new"  >
+          {/* onMouseMove={this.handleMouseMove} */}
+          {/* <MousePointer mouse={this.state} /> */}
             <div id="main-container" className="minified">
               <div className="container-fluid">
 
@@ -75,6 +79,7 @@ class App extends Component {
                             <li><Link to="/pages/Users" >Users</Link></li>
                             <li><Link to="/pages/FormSubmission" >FormSubmission</Link></li>
                             <li><Link to="/pages/Response" >Response</Link></li>
+                            <li><Link to="/pages/ManageForms" >ManageForms</Link></li>
                         </div>
                     </div> 
                 </div>
@@ -87,8 +92,11 @@ class App extends Component {
                     <Route path="/pages/UserProfile" render={props => <UserProfile {...props} height={this.state.height}/>}></Route>
                     <Route path="/pages/YourTeam" render={props => <YourTeam {...props} height={this.state.height}/>}></Route>
                     <Route path="/pages/Invitation" render={props => <Invitation {...props} height={this.state.height}/>}></Route>
+                    <Route path="/pages/Users" component={Users}></Route>
                     <Route path="/pages/FormSubmission" component={SubmissionDetails}></Route>
+                    <Route path="/pages/ProjectManageSite" component={ProjectManageSite}></Route>
                     <Route path="/pages/Response" component={Response}></Route>
+                    <Route path="/pages/ManageForms" component={ManageForms}></Route>
                     <Route path="/" render={props => <MyformMain {...props} height={this.state.height}/>}></Route>
                     {/* <Route exact path="/myform" render={props => <MyForm {...props} height={this.state.height}/>}></Route> */}
                   </Switch>
