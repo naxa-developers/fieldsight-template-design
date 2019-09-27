@@ -14,7 +14,7 @@ const SelectOption = () => (
     <Select options={options} />
 )
 
-const popupState = {
+const popUpState = {
     addModal: false, uploadModal: false
 }
 class ProjectManageSite extends Component {
@@ -23,7 +23,7 @@ class ProjectManageSite extends Component {
     }
     showPopup = (e, type) => {
         this.setState((prevState) => ({
-            ...popupState,
+            ...popUpState,
             [`${type}Modal`]: true
         }));
     }
@@ -40,7 +40,7 @@ class ProjectManageSite extends Component {
                 <main id="main-content">
                     <div className="card">
                         <div className="card-header main-card-header sub-card-header">
-                            <h5>Site Manage</h5>
+                            <h5>Sites</h5>
                             <div className="dash-btn">
                                 <form className="floating-form">
                                     <div className="form-group mr-0">
@@ -49,9 +49,9 @@ class ProjectManageSite extends Component {
                                         <i className="la la-search"></i>
                                     </div>
                                 </form>
-                                <a href={`#/`} className="fieldsight-btn" onClick={(e) => this.showPopup(e, 'add')}><i className="la la-plus"></i></a>
-                                <a href={`#/`} className="fieldsight-btn">Meta Attributes</a>
-                                <a href={`#/`} className="fieldsight-btn" onClick={(e) => this.showPopup(e, 'upload')}>Bulk upload</a>
+                                <button className="fieldsight-btn" onClick={(e) => this.showPopup(e, 'add')}><i className="la la-plus"></i></button>
+                                <button className="fieldsight-btn">Meta Attributes</button>
+                                <button className="fieldsight-btn" onClick={(e) => this.showPopup(e, 'upload')}>Bulk upload/update</button>
                             </div>
                         </div>
                         <div className="card-body">

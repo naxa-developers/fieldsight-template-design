@@ -1,15 +1,32 @@
 import React, { Component } from 'react';
-class ResponseStageForm extends Component{
+import ResponseTable from '../Responsed/ResponseTable'
+import StageTable from '../Responsed/StageTable'
+
+class ResponseScheduledForm extends Component{
+    state = {
+        active: true,
+    };
+    handleClick = () => {
+        this.setState({
+            active: !this.state.active
+        });
+    }
     render(){
         return(
             <React.Fragment>
                 <div className="card-header main-card-header sub-card-header">
                     <h5>Stage Forms</h5>
+                    <dv className="dash-btn">
+                        <button onClick={this.handleClick} className="fieldsight-btn">{this.state.active ? 'View By Status' : 'View by Form'}</button>
+                    </dv>
                 </div>
                 <div className="card-body">
+                    {this.state.active &&  <ResponseTable  />}
+
+                    {!this.state.active && <StageTable />}
                 </div>      
             </React.Fragment>
         )
     }
 }
-export default ResponseStageForm
+export default ResponseScheduledForm

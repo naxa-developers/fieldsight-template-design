@@ -2,13 +2,14 @@ import React , {Component} from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 class ProfileSidebar extends Component {
+    
     render (){
         return(
             <React.Fragment>
                 
-                <div className="profile-content">
+                <div className="profile-content" onMouseMove={this.handleMouseMove}>
                     <figure>
-                        <img src="/img/pf.jpg" alt="profile" />
+                        <img src="/img/pf.jpg" alt="profile"/>
                     </figure>
                     <div className="user-info">
                         <h4>FieldSight Superuser</h4>

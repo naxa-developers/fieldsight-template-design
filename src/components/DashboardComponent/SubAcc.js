@@ -2,17 +2,29 @@ import React, { Component } from 'react';
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import SubmissionMap from '../DashboardComponent/SubmissionMap'
 
 
 class SubAcc extends Component {
+
+    state = {
+        active: false,
+    };
+
+      toggleIcon = () => {
+        this.setState({ 
+            active: !this.state.active 
+        });
+    };
     
     render() {
         return (
             <React.Fragment>
-                <Accordion defaultActiveKey="0" className="accordion" id ="accordion">
+                <Accordion id ="accordion">
                     <Card>
                         <Card.Header>
-                            <h5>
+                        {/* <h5 className={this.state.showOpen ? "rotated" : null} onClick={() => this.setState({showOpen: true})}></h5> */}
+                            <h5 className={this.state.active ? "rotate" : "non-rotate"} onClick={this.toggleIcon}>
                                 <Accordion.Toggle as={Button} variant="link" eventKey="0">
                                 Group 1
                                 </Accordion.Toggle>
@@ -27,8 +39,29 @@ class SubAcc extends Component {
                                     <time><i className="la la-clock-o"> May 19 -2019</i></time>
                                 </li>
                                 <li>
-                                        <h6>Surveyed time / सर्वे गरिएको मिति</h6>
+                                    <h6>Surveyed time / सर्वे गरिएको मिति</h6>
                                     <time><i className="la la-clock-o"> May 19 -2019</i></time>
+                                </li>
+                                <li>
+                                    <h6>Surveyed time / सर्वे गरिएको मिति</h6>
+                                    <div className="submission-map">
+                                        <div className="row">
+                                            <div className="col-lg-3 col-md-3">
+                                                <div className="map-form">
+                                                    <SubmissionMap />
+                                                </div>
+                                            </div>
+                                            <div className="col-lg-3 col-md-3">
+                                                <div className="map-legend">
+                                                    <p><span>Latitude:</span><label>27.05</label></p>
+                                                    <p><span>Longitude:</span><label>85.15</label></p>
+                                                    <p><span>Altitude:</span><label>2100</label></p>
+                                                    <p><span>Accuracy:
+                                                        </span><label>7.05</label></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -39,17 +72,34 @@ class SubAcc extends Component {
                                 </h5>
                             </div>
                             <div className="card-body">
-                                <div className="submission-list normal-list">
+                                <div className="submission-list thumb-list">
                                     <ul>
                                         <li>
-                                            <h6>Surveyed time / सर्वे गरिएको मिति</h6>
-                                            <time><i className="la la-clock-o"> May 19 -2019</i></time>
+                                            <figure>
+                                                <img src="/img/pf.jpg" alt="image"/>
+                                            </figure>
+                                            <div className="content">
+                                                <h6>Surveyed time / सर्वे गरिएको मिति</h6>
+                                                <time><i className="la la-clock-o"> May 19 -2019</i></time>
+                                            </div>
                                         </li>
                                         <li>
-                                            <h6>Surveyed time / सर्वे गरिएको मिति</h6>
-                                            <time><i className="la la-clock-o"> May 19 -2019</i></time>
+                                            <figure>
+                                                <img src="/img/pf.jpg" alt="image"/>
+                                            </figure>
+                                            <div className="content">
+                                                <h6>Surveyed time / सर्वे गरिएको मिति</h6>
+                                                <time><i className="la la-clock-o"> May 19 -2019</i></time>
+                                            </div>
                                         </li>
                                     </ul>
+                                    <div className="submission-map">
+                                        <div className="row">
+                                            <div className="col-xl-3 col-md-3">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -100,7 +150,7 @@ class SubAcc extends Component {
                     </Card>
                     <Card>
                         <Card.Header>
-                            <h5>
+                            <h5 className={this.state.active ? "rotate" : "non-rotate"} onClick={this.toggleIcon}>
                                 <Accordion.Toggle as={Button} variant="link" eventKey="1">
                                     Group 2
                                 </Accordion.Toggle>
@@ -123,7 +173,7 @@ class SubAcc extends Component {
                         </Card.Body>
                         </Accordion.Collapse>
                     </Card>
-                    </Accordion>
+                </Accordion>
             </React.Fragment>
         );
     }

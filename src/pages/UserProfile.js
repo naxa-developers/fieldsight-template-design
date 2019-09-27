@@ -15,6 +15,7 @@ class UserProfile extends Component{
     state ={
         roleTab:true, activityTab:false
     }
+    
     openTab = (e,type) => {
         this.setState((prevState) => ({
             ...initialState,
@@ -34,7 +35,8 @@ class UserProfile extends Component{
     render(){
         return(
             <React.Fragment>
-                <main id="main-content">
+                <main id="main-content" >
+                    
                     <div className="row">
                         <div className="col-xl-3 col-lg-4">
                             <div className="left-sidebar new-sidebar profile-sidebar sticky-top">
@@ -57,10 +59,10 @@ class UserProfile extends Component{
                                     <div className="card-header main-card-header tab-header">
                                         <ul className="nav nav-tabs " id="myTab" role="tablist">
                                             <li className="nav-item">
-                                                <a className={this.state.roleTab ? "nav-link active" : "nav-link"} href={`#/`} onClick={(e) => this.openTab(e,'role')}>Roles</a>
+                                                <a className={this.state.roleTab ? "nav-link active" : "nav-link"}  onClick={(e) => this.openTab(e,'role')}>Roles</a>
                                             </li>
                                             <li className="nav-item">
-                                                <a className={this.state.activityTab ? "nav-link active" : "nav-link"} href={`#/`} onClick={(e) => this.openTab(e, 'activity')}>Activities</a>
+                                                <a className={this.state.activityTab ? "nav-link active" : "nav-link"}  onClick={(e) => this.openTab(e, 'activity')}>Activities</a>
                                             </li>
                                         </ul>
                                     </div>
